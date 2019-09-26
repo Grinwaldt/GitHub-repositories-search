@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "Repositories";
+}
+
+    <html ng-app="SearchModule">
+    <head>
+        <script src="~/Scripts/angular.js"></script>
+        <script src="~/Scripts/Projectjs/searchFunc.js"></script>
+    </head>
+    <body ng-controller="searchFunc" >
+
+        <nav class="navbar navbar-inverse navbar-fixed-top" style="height: 7%;">
+            <div class="container">
+                <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="navbar-nav header-items">
+                        <li>
+                            <img class="logo" src="~/Images/github-logo.png" />
+                        </li>
+
+                        <li>
+                            <form action="">
+                                <div class="form-group">
+                                    <input type="text" class="form-control header-search-input jump-to-field js-jump-to-field js-site-search-focus input-search-box "
+                                           ng-model="textInput"  placeholder="search or jump to ...">
+                                </div>
+                            </form>
+                        </li>
+                        <li>
+                            <button type="button" class="btn btn-info btn-search" ng-click="getRepositoriesApi()" value="search"> search</button>
+                        </li>
+                        <li>
+                            <a class="btn btn-info btn-search btn-show-bookmarks" href="repositories/bookmarks">Bookmarks</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="cont">
+            <div class="row">
+                <br /><br />
+                      <ul class="col-md-12 repositories-list" ng-repeat="repository in repositoriesList">
+                          <li class="col-md-8 result">
+                              <img class="avatar-img" ng-src="{{repository.owner.avatar_url}}" alt="avatar_owner">
+                              <label class="repoName _ngcontent-smq-c1">{{repository.name}}</label>
+                              <input type="button"
+                                     class="custom-control-input btn-default btn-bookmark"
+                                     id="{{repository.id}}"
+                                     @*ng-model="repository.isBookmark"*@
+                                     ng-click="updateRepository(repository)">
+                          </li>
+                      </ul>
+            </div>
+        </div>
+    </body>
+    </html>

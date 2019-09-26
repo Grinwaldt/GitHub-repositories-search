@@ -1,0 +1,193 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+li {
+    list-style-type: none;
+}
+.navbar-inverse {
+    background-color: #e9e9e9;
+    border-color: #e9e9e9;
+}
+
+.logo {
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin-left: -85px;
+    margin-top: 10px;
+}
+
+.btn-search {
+    margin: 10px 0px 0px 100px;
+   
+}
+.btn-show-bookmarks {
+    float: left;
+    margin-right: 56px;
+    height: 34px;
+    color: white;
+}
+.navbar-inverse .navbar-nav > li > a {
+    padding-bottom: inherit;
+    padding-top: 6px;
+    color: white;
+}
+navbar-nav > li > a {
+    padding-top: unset;
+    padding-bottom: unset;
+}
+.btn-bookmark {
+    float: right;
+    width: 30px;
+    height: 30px;
+    margin-top: 38px;
+    background-repeat: no-repeat;
+    background-image: url('../Images/icons8-bookmark-24.png');
+}
+
+
+.input-search-box {
+    margin-top: 10px;
+    border: none;
+    background-color: white;
+    width: 400px;
+}
+.repoName {
+    margin-left: 50px;
+}
+.result {
+    /*width: 1135px;*/
+    background-color:aliceblue;
+}
+.repositories-list {
+     /*width: 1135px;
+    background-color: aliceblue;*/
+}
+
+    .repositories-list li {
+        list-style: none;
+        height: 100px;
+    }
+
+.avatar-img {
+    display: inline-block;
+    overflow: hidden;
+    line-height: 1;
+    vertical-align: middle;
+    border-radius: 3px;
+    width: 75px;
+    height: 75px;
+    float: left;
+    margin-top: 12px;
+}
+
+.repositories-list .repoName {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    float: left;
+    margin-top: 38px;
+    margin-left: 106px;
+}
+
+
+./*repositories-list .result {
+    width: 25%;
+    display: inline-block;
+    margin-bottom: 2px;
+    height: 230px;
+    background: aliceblue;
+    text-align: center;
+    font-weight: 700;
+}*/
+
+    .result .repo {
+        /* display: inline-block;*/
+        /* float: left; */
+        width: 100%;
+        height: 50%;
+        text-align: center;
+        padding-top: 10px;
+        display: list-item;
+        /* border-left: 1px solid #eeeff1;*/
+    }
+
+.repo .box-title {
+    border-bottom: 1px solid #eeeff1;
+    margin-bottom: .5em;
+}
+
+.repo .avatar {
+    float: right;
+    margin-bottom: 0;
+    width: 85px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.result .content {
+    display: inline-block;
+    float: left;
+    width: 70%;
+}
+
+.content {
+    border-left: 1px solid #eeeff1;
+    height: 100%;
+}
+
+.repo .bookmark {
+    float: right;
+    margin-right: 27px;
+    margin-top: 8px;
+}
+
+.bookmark-select {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    float: right;
+    margin: 20px 40px 0 0;
+    background-position: center;
+    background-size: cover;
+    border: none;
+    background: url(../img/icons8-bookmark-24.png);
+    background-repeat: no-repeat;
+}
+
+.bookButton {
+    font-weight: 600;
+    border-radius: 5px;
+    border-style: groove;
+}
+
+.content .repoName {
+    width: 50%;
+    display: block;
+    border-bottom: 1px solid #eeeff1;
+    margin-bottom: 10px;
+    font-weight: 900;
+    margin-left: 100px;
+}

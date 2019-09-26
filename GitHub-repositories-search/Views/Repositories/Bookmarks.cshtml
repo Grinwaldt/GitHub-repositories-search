@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Bookmarks";
+}
+    <html ng-app="BookmarksModule">
+    <head>
+        <script src="~/Scripts/angular.js"></script>
+        <script src="~/Scripts/Projectjs/bookmarksFunc.js"></script>
+    </head>
+    <body ng-controller="bookmarksFunc" ng-init="init()">
+
+        <nav class="navbar navbar-inverse navbar-fixed-top" style="height: 7%;">
+            <div class="container">
+                <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="navbar-nav header-items">
+                        <li>
+                            <img class="logo" src="~/Images/github-logo.png" />
+                        </li>
+                        <li>
+                            <a class="btn btn-info btn-search btn-show-bookmarks" href="/repositories">Back</a> 
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="cont">
+            <div class="row">
+                <br /><br />
+                      <ul class="col-md-9 repositories-list" ng-repeat="repository in repositoriesList">
+                          <li class="col-md-8 result">
+                              <img class="avatar-img" ng-src="{{repository.Avatar}}" alt="avatar_owner">
+                              <label class="repoName _ngcontent-smq-c1">{{repository.Name}}</label>
+                              <input type="button"
+                                     class="custom-control-input btn-bookmark"
+                                     id="{{repositoryObj.ID}}"
+                                     ng-click="updateRepository(repository)">
+                          </li>
+                      </ul>
+            </div>
+        </div>
+    </body>
+    </html>
