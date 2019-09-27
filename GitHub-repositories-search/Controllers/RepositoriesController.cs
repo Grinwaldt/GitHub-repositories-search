@@ -10,6 +10,8 @@ namespace GitHub_repositories_search.Controllers
 {
     public class RepositoriesController : Controller
     {
+        public List<RepositoryModel>  repositoriesList;
+
         public ActionResult Index()
         {
             return View();
@@ -19,20 +21,15 @@ namespace GitHub_repositories_search.Controllers
             return View();
         }
         //Returns updated repositories list
-        public ActionResult UpdateRepositoriesList(RepositoryModel repository)
+        public ActionResult UpdateBookmarksList(RepositoryModel repository)
         {
-            Console.WriteLine(repository    );
-            
-            //TODO :SET SESSION 
-            var repositoriesList = HttpContext.Session["items"] as List<RepositoryModel>;
+            repositoriesList = HttpContext.Session["items"] as List<RepositoryModel>;
 
             if (repositoriesList == null)
                 repositoriesList = new List<RepositoryModel>();
             repositoriesList.Add(repository);
 
             HttpContext.Session["items"] = repositoriesList;
-            Console.WriteLine(HttpContext.Session["items"]);
-
             return Json(repositoriesList, JsonRequestBehavior.AllowGet);
         }
 
@@ -40,8 +37,6 @@ namespace GitHub_repositories_search.Controllers
         public ActionResult GetBookmarksList()
         {
             var bookmarksList = HttpContext.Session["items"] as List<RepositoryModel>;
-            Console.WriteLine(bookmarksList);
-
             return Json(bookmarksList, JsonRequestBehavior.AllowGet);
         }
     }

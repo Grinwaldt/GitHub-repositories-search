@@ -26,7 +26,7 @@
                             </form>
                         </li>
                         <li>
-                            <button type="button" class="btn btn-info btn-search" ng-click="getRepositoriesApi()" value="search"> search</button>
+                            <button type="button" class="btn btn-info btn-search" ng-click="searchRepositories()" value="search"> search</button>
                         </li>
                         <li>
                             <a class="btn btn-info btn-search btn-show-bookmarks" href="repositories/bookmarks">Bookmarks</a>
@@ -47,7 +47,7 @@
                                      class="custom-control-input btn-default btn-bookmark"
                                      id="{{repository.id}}"
                                      @*ng-model="repository.isBookmark"*@
-                                     ng-click="updateRepository(repository)">
+                                     ng-click="bookmarkRepository(repository)">
                           </li>
                       </ul>
             </div>

@@ -26,14 +26,10 @@
         <div class="cont">
             <div class="row">
                 <br /><br />
-                      <ul class="col-md-9 repositories-list" ng-repeat="repository in repositoriesList">
+                      <ul class="col-md-9 repositories-list" ng-repeat="bookmark in bookmarksList">
                           <li class="col-md-8 result">
-                              <img class="avatar-img" ng-src="{{repository.Avatar}}" alt="avatar_owner">
-                              <label class="repoName _ngcontent-smq-c1">{{repository.Name}}</label>
-                              <input type="button"
-                                     class="custom-control-input btn-bookmark"
-                                     id="{{repositoryObj.ID}}"
-                                     ng-click="updateRepository(repository)">
+                              <img class="avatar-img" ng-src="{{bookmark.Avatar}}" alt="avatar_owner">
+                              <label class="repoName _ngcontent-smq-c1">{{bookmark.Name}}</label>
                           </li>
                       </ul>
             </div>

@@ -2,17 +2,17 @@
 
 searchBox.controller('searchFunc', ['$scope', '$http',
     function searchFunc($scope, $http) {
-        //get api for search
-        $scope.getRepositoriesApi = function () {
+
+        //get repositories from GitHub api by the search input text.
+        $scope.searchRepositories = function () {
             $http.get('https://api.github.com/search/repositories?q=' + $scope.textInput).then(function (res) {
                 if (!res.data)
                     return;
                 $scope.repositoriesList = res.data.items;
-                console.log("all repositories",$scope.repositoriesList);
             });
         }
-        //updateing in server the bookmarks items in the list 
-        $scope.updateRepository = function (repository) {
+        //send bookmark item to update the seesion list. 
+        $scope.bookmarkRepository = function (repository) {
           
             var repositoryDetails = {
                 id: repository.id,
@@ -20,22 +20,12 @@ searchBox.controller('searchFunc', ['$scope', '$http',
                 Name: repository.name,
             }
 
-
-
             var post = $http({
                 method: "POST",
-                url: "/Repositories/UpdateRepositoriesList",
+                url: "/Repositories/UpdateBookmarksList",
                 dataType: 'json',
                 data: { repository: repositoryDetails },
                 headers: { "Content-Type": "application/json" }
-            });
-
-            post.success(function (data, status) {
-                console.log('sucsess',data,status)
-            });
-
-            post.error(function (data, status) {
-                console.log('error',data,status)
             });
         }
 
